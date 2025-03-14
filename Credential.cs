@@ -212,7 +212,7 @@ namespace CredentialManagement
             byte[] passwordBytes = Encoding.Unicode.GetBytes(Password);
             if (Password.Length > (512 * 5))
             {
-                throw new ArgumentOutOfRangeException("The password has exceeded 512 bytes.");
+                throw new ArgumentOutOfRangeException($"The password has exceeded 512 * 5 bytes as it was {passwordBytes.Length}.");
             }
 
             NativeMethods.CREDENTIAL credential = new NativeMethods.CREDENTIAL();
